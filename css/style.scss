@@ -1,0 +1,275 @@
+$buildBorder: 1px solid red;
+$headerBackground: #1f2937;
+$mainFont: 'Roboto', sans-serif;
+$mainTextColor: #E5E7EB;
+$secondayTextColor: #1F2937;
+$thirdTextColor: white;
+$centerContainer: 0 auto;
+$thinFont: 100;
+$medFont: 400;
+$boldFont: 700;
+$extraBoldFont: 900;
+
+@mixin flexRow() {
+    display: flex;
+}
+
+@mixin flexEnd() {
+    display: flex;
+    justify-content: end;
+}
+
+@mixin flexAlignCenter() {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flexCenterAll() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*--------------------------Backgrounds------------------------*/
+/*-------------------------------------------------------------*/
+/*--cancel whitespace on all sides--*/
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*--header Section--*/
+.opening-bg {
+    background-color: $headerBackground;
+    width: 100%;
+}
+
+/*--section3--*/
+.section3-bg {
+    background-color: $mainTextColor;
+    padding-top: 8%;
+    padding-bottom: 6%;
+}
+
+/*--footer--*/
+.footer-bg {
+    background-color: $headerBackground;
+    width: 100%;
+    padding: 3% 0 3% 0;
+}
+
+/*-------------------------Containers--------------------------*/
+/*-------------------------------------------------------------*/
+/*------re used layout divs------*/
+.row {
+    @include flexRow();
+}
+.col {
+    flex: 1;
+    //border: $buildBorder;
+}
+.col-flex {
+    @include flexEnd();
+    flex: 1;
+    //border: $buildBorder;
+}
+
+/*---------------------------nested sections with all content--------------------------*/
+/*-------------------------------------------------------------------------------------*/
+
+/*------nav-------*/
+.nav-container {
+    @include flexAlignCenter();
+    width: 75%;
+    margin: $centerContainer;
+    //border: $buildBorder;
+
+    .nav-logo {
+        //border: $buildBorder;
+        width: 8%;
+        height: 8%;
+
+        .nav-menu {
+            @include flexEnd();
+            //border: $buildBorder;
+            width: 80%;
+            list-style: none;
+            margin-left: auto;
+
+            .nav-item {
+                //border: $buildBorder;
+                font-family: $mainFont;
+                font-size: 15px;
+                color: $mainTextColor; 
+                text-decoration: none;
+                margin-left: 65px;
+                &:hover {
+                    color: rgb(245, 204, 204);;
+                }
+            }    
+        }
+    }
+}
+
+
+/*------header------*/
+.header-container {
+    width: 75%;
+    margin: $centerContainer;
+    padding-top: 6%;
+    //border: $buildBorder;
+
+        .header-image {
+            width: 100%;
+            height: 70%;
+            border-radius: 2px;
+
+            .header-h1 {
+                font-family: $mainFont;
+                font-size: 42px;
+                color: $thirdTextColor;
+                //border: $buildBorder;
+                margin-top: 0;
+
+                .header-p {
+                    font-family: $mainFont;
+                    color: $mainTextColor;
+                    padding-right: 20px;
+                    //border: $buildBorder;
+
+                    .header-button {
+                        background-color: rgb(85, 85, 245);
+                        border: 1px solid white;
+                        font-family: $mainFont;
+                        font-weight: $boldFont;
+                        color: $thirdTextColor;
+                        text-decoration: none;
+                        padding: 6px 20px 6px 20px;
+                        border-radius: 5px;
+                        &:hover {
+                            background-color:rgb(33, 33, 202); 
+                        }
+                    }
+                }
+            }
+        }
+}
+
+
+
+/*------section2------*/
+.section2-container {
+    width: 65%;
+    margin: $centerContainer;
+    //border: $buildBorder;
+    margin-bottom: 10%;
+
+    .section2-imgs {
+        display: block;
+        margin: $centerContainer;
+        width: 85%;
+        height: 75%;
+        border: 2px solid rgb(117, 117, 223);
+        border-radius: 5px;
+        margin-bottom: 1%;
+
+        .section2-h2 {
+            font-family: $mainFont;
+            font-size: 35px;
+            font-weight: $extraBoldFont;
+            color: $secondayTextColor;
+            text-align: center;
+            //border: $buildBorder;
+
+            .section2-p {
+                font-family: $mainFont;
+                color: #7e8082;
+                text-align: center;
+                padding: 5px;
+            }
+        }
+    }
+}
+
+
+/*------section3------*/
+.section3-container {
+    width: 65%;
+    margin: $centerContainer;
+    //border: $buildBorder;
+
+    .section3-quote-p {
+        font-family: $mainFont;
+        font-weight: $thinFont;
+        font-style: italic;
+        font-size: 20px;
+        color: $secondayTextColor;
+
+        .section3-h6 {
+            font-family: $mainFont;
+            font-weight: $extraBoldFont;
+            font-size: 14px;
+            color: $secondayTextColor;
+            text-align: end;
+        }
+    }
+}
+
+
+/*------section4------*/
+.section4-container {
+    box-sizing: border-box;
+    width: 75%;
+    margin: $centerContainer;
+    //border: $buildBorder;
+    margin-top: 8%;
+    margin-bottom: 8%;
+    background-color: #3882F6;
+    border-radius: 5px;
+    padding: 15px 80px 25px 60px;
+
+    .section4-h5 {
+        font-family: $mainFont;
+        font-weight: $extraBoldFont;
+        font-size: 18px;
+        color: $thirdTextColor;
+        //border: $buildBorder;
+        margin-bottom: 0;
+
+        .section4-p {
+            font-family: $mainFont;
+            color: $thirdTextColor;
+            font-size: 14px;
+            margin-top: 5px;
+            //border: $buildBorder;
+
+            .section4-button {
+                background-color: #3882F6;
+                border: 2px solid white;
+                font-family: $mainFont;
+                font-weight: $boldFont;
+                color: $thirdTextColor;
+                text-decoration: none;
+                padding: 4px 22px 4px 22px;
+                border-radius: 5px;
+                float: right;
+                margin-top: 40px;
+                &:hover {
+                    background-color:rgb(33, 33, 202);
+                }
+            }
+        }
+    }
+}
+
+
+/*------footer------*/
+.footer-container {
+    @include flexCenterAll();
+
+    .footer-p {
+        font-family: $mainFont;
+        color: $mainTextColor;
+    }
+}
